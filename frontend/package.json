@@ -1,7 +1,27 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "hugup",
+  "version": "1.0.0",
+  "description": "A beautiful, feature-complete WhatsApp clone built with React",
   "private": true,
+  "homepage": "https://hugup.vercel.app",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "keywords": [
+    "whatsapp",
+    "clone",
+    "messaging",
+    "chat",
+    "react",
+    "tailwindcss",
+    "framer-motion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/hugup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/hugup/issues"
+  },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "axios": "^1.8.4",
@@ -20,7 +40,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}",
+    "type-check": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
@@ -41,8 +68,15 @@
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.4",
+    "gh-pages": "^6.1.1",
     "globals": "15.15.0",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.4.17",
+    "webpack-bundle-analyzer": "^4.10.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }
